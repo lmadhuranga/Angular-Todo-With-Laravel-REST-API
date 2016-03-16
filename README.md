@@ -21,6 +21,7 @@ Features
 Copy server_laravel_REST_API to PHP host and check the server is up and runing.
 
 ### Installation angular application
+## download the dependencies using npm
 ```sh
 cd client_app_angular
 $ npm install
