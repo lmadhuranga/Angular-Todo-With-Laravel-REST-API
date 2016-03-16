@@ -2,7 +2,7 @@
 var UsersServices = angular.module('Users.service', ['ngResource']);
 // id is the parameter
 UsersServices.factory('Users', function ($resource) {
-    return $resource('http://yeshika-webmadhuranga-1.c9users.io/phonebook/public/api/v1/phonebook/:id', {}, {
+    return $resource('http://localhost/phonebook/public/api/v1/phonebook/:id', {}, {
         create: { method: 'POST' },
         get: { method: 'GET' ,params: {id: '@id'},isArray:true},
         query: { method: 'GET' ,params: {id: '@id',isArray:false}},
@@ -11,7 +11,7 @@ UsersServices.factory('Users', function ($resource) {
     });
 }); 
 
-var UsersServices = angular.module('Util.service', ['ngResource'])
+var UtilService = angular.module('Util.service', ['ngResource'])
 .factory('myalert', function () {
     return {
     	confirm:function(msg) {
