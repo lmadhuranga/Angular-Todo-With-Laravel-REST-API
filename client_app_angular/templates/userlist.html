@@ -1,0 +1,58 @@
+
+<div class="container">
+	<div class="row">
+		<h2 class="col-md-offset-1">User list</h2>  
+		<div class="col-md-10 col-md-offset-1">
+			<div class="panel panel-default panel-table">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col col-xs-6">
+							<h3 class="panel-title">Panel Heading</h3>
+						</div>
+						<div class="col col-xs-6 text-right">
+							<a href="#useradd" class="btn btn-sm btn-primary btn-create"><span class="glyphicon glyphicon-plus"></span> &nbsp; New</a>
+						</div>
+					</div>
+				</div> <!-- panel-heading -->
+				<div class="panel-body">
+					<table class="table table-striped table-hover table-bordered table-list">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Mobile</th>
+								<th>Action</th>
+							</tr> 
+						</thead>
+						<tbody>
+							<tr ng-repeat="user in Users">
+								<td class="hidden-xs">1</td>
+								<td><span class="glyphicon glyphicon-user"></span> {{user.name}}</td>
+								<td><span class="glyphicon glyphicon-envelope"></span> {{user.email}}</td>
+								<td><span class="glyphicon glyphicon-phone"></span> {{user.phone_number}}</td>
+								<td align="center">
+									<a class="btn btn-default" href="#useredit/{{user.id}}"><em class="glyphicon glyphicon-pencil"></em></a>
+									<a class="btn btn-danger" ng-click="remove(user.id)" href="#"><em class="glyphicon glyphicon-trash"></em></a>
+								</td>
+							</tr> 
+						</tbody>
+					</table>
+
+				</div> <!-- panel-body -->
+				<div class="panel-footer">
+					<div class="row">
+						<div class="col col-xs-4">Footer</div>
+						<div class="col col-xs-8">
+							<ul class="pagination visible-xs pull-right">
+								<li><a href="#">«</a></li>
+								<li><a href="#">»</a></li>
+							</ul>
+						</div>
+					</div>
+				</div> <!-- panel-footer -->
+			</div> <!-- Panel -->
+		</div>
+	</div> <!-- row -->
+</div> <!-- container -->
+

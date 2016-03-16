@@ -1,0 +1,63 @@
+<div class="container">
+    <form name="userForm" class="form-horizontal" ng-submit="update(userForm.$valid)" novalidate>
+        <fieldset> 
+            <!-- Form Name -->
+            <legend>{{User.name}} Edit</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                  <label class="col-md-4 control-label" for="Name">Full Name</label>  
+                  <div class="col-md-4">
+                      <input id="Name" ng-model="User.name" name="name" placeholder="Full Name" class="form-control input-md" required="" type="text" ng-minlength="3" ng-maxlength="30">
+                      <span ng-show="userForm.name.$error.minlength" class="help-block">Name is too short.</span>
+                      <span ng-show="userForm.name.$error.required" class="help-block">Name is required.</span>
+                  </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="email">Email</label>  
+                <div class="col-md-4">
+                  <input id="email" ng-model="User.email" name="email" placeholder="Email" class="form-control input-md" required="" type="email">
+                  <span ng-show="userForm.email.$error.required" class="help-block">Email is Required</span>
+                  <span ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</span>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="mobile">Mobile</label>  
+                <div class="col-md-4">
+                    <input id="mobile" ng-model="User.phone_number" name="phone_number" placeholder="Mobile" required="" class="form-control input-md" type="number" ng-minlength="9" ng-maxlength="10">
+                    <span ng-show="userForm.phone_number.$error.number" class="help-block">Please Enter valid mobile number.</span>
+                    <span ng-show="userForm.phone_number.$error.minlength" class="help-block">Mobile is too short.</span>
+                    <span ng-show="userForm.phone_number.$error.maxlength" class="help-block">Mobile is too long.</span>
+                    <span ng-show="userForm.phone_number.$error.required" class="help-block">Mobile is required.</span>
+                    
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="address">Address</label>  
+                <div class="col-md-4">
+                    <input id="address" ng-model="User.address" name="address" placeholder="Address" class="form-control input-md" required="" type="text" ng-maxlength="50"> 
+                    <span ng-show="userForm.address.$error.maxlength" class="help-block">Address is too long.</span>
+                    <span ng-show="userForm.address.$error.required" class="help-block">Address is required.</span>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="save"> </label>
+                <div class="col-md-4">
+                    <!-- diable save button html validtion fail -->
+                    <button id="save"   name="save" class="btn btn-primary"  ng-disabled="userForm.$invalid">Save</button>
+                    <button ui-sref="header.userlist" class="btn btn-primary">Cancel</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div> <!-- container -->
