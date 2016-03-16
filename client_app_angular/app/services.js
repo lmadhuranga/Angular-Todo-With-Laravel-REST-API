@@ -2,7 +2,7 @@
 var UsersServices = angular.module('Users.service', ['ngResource']);
 // id is the parameter
 UsersServices.factory('Users', function ($resource) {
-    return $resource('http://localhost/phonebook/public/api/v1/phonebook/:id', {}, {
+     return $resource('http://localhost/phonebook/public/api/v1/phonebook/:id', {}, {
         create: { method: 'POST' },
         get: { method: 'GET' ,params: {id: '@id'},isArray:true},
         query: { method: 'GET' ,params: {id: '@id',isArray:false}},

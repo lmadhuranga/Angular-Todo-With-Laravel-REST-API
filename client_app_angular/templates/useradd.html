@@ -1,5 +1,5 @@
 <div class="container">
-    <form name="userForm" class="form-horizontal" ng-submit="update(userForm.$valid)" novalidate>
+    <form name="userForm" class="form-horizontal" ng-submit="add(userForm.$valid)" novalidate>
         <fieldset> 
             <!-- Form Name -->
             <legend>Add New User</legend>
@@ -52,7 +52,7 @@
                 <label class="col-md-4 control-label" for="save"> </label>
                 <div class="col-md-4">
                     <!-- diable save button html validtion fail -->
-                    <button id="save"   name="save" class="btn btn-primary"  ng-disabled="userForm.$invalid">Save</button>
+                     <button id="save"   name="save" class="btn btn-primary"  ng-disabled="userForm.$invalid">Save</button>
                     <button ui-sref="header.userlist" class="btn btn-primary">Cancel</button>
                 </div>
             </div>
